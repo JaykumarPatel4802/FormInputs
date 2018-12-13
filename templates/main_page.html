@@ -40,6 +40,16 @@
             <option>5</option>
           </select>
         </div>
+
+        <div class="form-group">
+          <label for="age_dropdown">Select Age Group</label>
+          <select class="form-control" name="age_dropdown" id="age_dropdown">
+            <option>1-12</option>
+            <option>13-19</option>
+            <option>19-65</option>
+          </select>
+        </div>
+
         <div class="form-group">
           <label for="input_freeform">Example textarea</label>
           <textarea class="form-control" name="input_freeform" id="input_freeform" rows="3"></textarea>
@@ -56,6 +66,12 @@
       {% if input_data %} {{ input_data }} {% endif %}
       <br />
       {% if animals %} {{ animals }} {% endif %}
+    </div>
+
+    <div class="container">
+      {% if input_data %} {{ input_data }} {% endif %}
+      <br />
+      {% if age %} {{ age }} {% endif %}
     </div>
   </body>
 </html>

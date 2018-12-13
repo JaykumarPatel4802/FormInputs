@@ -12,7 +12,13 @@ def process_inputs():
     dropdown = request.form.get('input_dropdown', '')
     select = request.form.get('input_select', '')
     freeform = request.form.get('input_freeform', '')
-    return render_template("main_page.html", input_data=dropdown,
+    name = request.form.get('input_name', '')
+    age = request.form.get('age_dropdown', '')
+    if age == "1-12" or age == "13-19":
+        return render_template("age_restriction.html")
+    else:
+        return render_template("main_page.html", input_data=dropdown,
+                            age="You're old enough to use this site, %s." % name,
                             output="You're a wizard %s." % name,
                             animals=dedupe(animals))
 
